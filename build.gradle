@@ -1,0 +1,23 @@
+group = 'com.vasslatam'
+version = '1.0.0'
+sourceCompatibility = '11'
+
+dependencies {
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+        }
+    }
+}

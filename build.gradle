@@ -6,6 +6,7 @@ dependencies {
 	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
 }
 
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -20,4 +21,14 @@ publishing {
             }
         }
     }
+    repositories {
+        maven {
+            url "$repositoryUrl"
+            credentials {
+                username = "$repoUser"
+                password = "$repoPassword"
+            }
+        }
+    }
 }
+

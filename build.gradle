@@ -10,6 +10,7 @@ dependencies {
 publishing {
     publications {
         mavenJava(MavenPublication) {
+        	artifactId = 'unit-test-example-api'
             from components.java
             versionMapping {
                 usage('java-api') {
